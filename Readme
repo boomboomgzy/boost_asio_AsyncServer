@@ -1,0 +1,7 @@
+##Here is a boost asio template server  project
+
+boost version 1.84
+
+linux build:
+- mkdir build
+- cmake .. && cmake --build . 
