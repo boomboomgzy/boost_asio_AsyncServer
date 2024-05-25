@@ -29,8 +29,7 @@ iocontext& Iocontextpool::Getioc(){
 
 void Iocontextpool::stop(){
     for(auto& p:_ioc_guards){
-        p->get_executor().context().stop();//不再接受新的异步请求
-        p->reset();//让ioc在没有异步请求时返回
+        p->reset();//销毁ioc_guard,从而ioc在处理完回调队列后返回
     }
 
     for(auto& t:_threads){
